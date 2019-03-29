@@ -1,10 +1,10 @@
 var config = {
-    apiKey: "AIzaSyBbNfByZKKaJ7mQcCdVH8tDubIzDSJkW5A",
-    authDomain: "androidnotificationtutorial.firebaseapp.com",
-    databaseURL: "https://androidnotificationtutorial.firebaseio.com",
-    projectId: "androidnotificationtutorial",
-    storageBucket: "androidnotificationtutorial.appspot.com",
-    messagingSenderId: "65883397340"
+    apiKey: "AIzaSyCBbAvsG2-xjitRmVu0Qrl66e-E3G0F_ac",
+    authDomain: "vcanteentrynoti-1532f.firebaseapp.com",
+    databaseURL: "https://vcanteentrynoti-1532f.firebaseio.com",
+    projectId: "vcanteentrynoti-1532f",
+    storageBucket: "vcanteentrynoti-1532f.appspot.com",
+    messagingSenderId: "253280269928"
 };
 
 firebase.initializeApp(config);

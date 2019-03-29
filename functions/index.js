@@ -1,4 +1,5 @@
 const functions = require('firebase-functions');
+
 var {google} = require('googleapis');
 var MESSAGING_SCOPE = "https://www.googleapis.com/auth/firebase.messaging";
 var SCOPES = [MESSAGING_SCOPE];
@@ -11,9 +12,18 @@ var router = express.Router();
 
 var request = require('request');
 
+// var http = require('http')
+
+// var port = 8085; 
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+
+// router.post('/send', function(req, res){
+//     res.json({
+//         'message' : 'E hia e sus'
+//     });
+// });
 
 router.post('/send', function(req, res){
 
@@ -27,7 +37,7 @@ router.post('/send', function(req, res){
             headers:{
                 Authorization: 'Bearer '+access_token
             }, 
-            url: "https://fcm.googleapis.com/v1/projects/androidnotificationtutorial/messages:send", 
+            url: "https://fcm.googleapis.com/v1/projects/vcanteentrynoti-1532f/messages:send", 
             body: JSON.stringify(
                 {
                     "message":{
@@ -48,6 +58,9 @@ router.post('/send', function(req, res){
 
 app.use('/api', router);
 
+// app.listen(port, function(){
+//     console.log("Server is listening to port "+ port);
+// });
 
 function getAccessToken(){
     return new Promise(function(resolve, reject){
@@ -69,6 +82,19 @@ function getAccessToken(){
     });
 }
 
+// getAccessToken().then(function(access_token){
+//     console.log(access_token);
+// });
+
+// var server = http.createServer(function(req, res){
+//     getAccessToken().then(function(access_token){
+//         res.end(access_token)
+//     });
+// });
+
+// server.listen(3000, function(){
+//     console.log("Server started")
+// });
 
 
 
